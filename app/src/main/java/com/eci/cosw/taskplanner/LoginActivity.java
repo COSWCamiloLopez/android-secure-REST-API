@@ -3,6 +3,7 @@ package com.eci.cosw.taskplanner;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
@@ -55,8 +56,9 @@ public class LoginActivity extends AppCompatActivity {
 
         if (!email.getText().toString().matches("")) {
             if (!password.getText().toString().matches("")) {
-
-            }else{
+                Intent loginIntent = new Intent(this, MainActivity.class);
+                startActivity(loginIntent);
+            } else {
                 password.setError("You must enter a password");
             }
         } else {

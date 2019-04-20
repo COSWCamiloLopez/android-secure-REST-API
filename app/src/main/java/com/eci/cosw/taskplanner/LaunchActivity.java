@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -18,9 +19,11 @@ public class LaunchActivity extends AppCompatActivity {
                 getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
         if (sharedPref.contains(TOKEN_KEY)) {
-            //TODO go to MainActivity
+            Intent mainIntent = new Intent(this, MainActivity.class);
+            startActivity(mainIntent);
         } else {
-            //TODO go to LoginActivity
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
         }
     }
 }
