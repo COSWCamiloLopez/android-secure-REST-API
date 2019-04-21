@@ -37,6 +37,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -44,10 +47,19 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity {
 
+    AuthService authService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http:/10.0.2.2:8080") //localhost for emulator
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        authService = retrofit.create(AuthService.class);
     }
 
     public void login(View view) {
