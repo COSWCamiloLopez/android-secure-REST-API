@@ -20,4 +20,5 @@
         completions."
     </string>
     <string name="preference_file_key" />
+    <string name="token_key">"TOKEN_KEY"</string>
 </resources>
