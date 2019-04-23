@@ -2,13 +2,18 @@ package com.eci.cosw.taskplanner;
 
 public class Token {
 
-    private String token;
+    private String accessToken;
 
-    public String getToken() {
-        return token;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    @Override
+    public String toString(){
+        return "Token: " + accessToken;
     }
 }
