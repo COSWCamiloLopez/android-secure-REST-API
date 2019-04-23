@@ -3,12 +3,11 @@ package com.eci.cosw.taskplanner;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
