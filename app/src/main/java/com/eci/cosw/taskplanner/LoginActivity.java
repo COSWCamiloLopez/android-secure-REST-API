@@ -62,7 +62,6 @@ public class LoginActivity extends AppCompatActivity {
                             LoginWrapper loginWrapper = new LoginWrapper(stringEmail, stringPassword);
                             Response<Token> response = authService.login(loginWrapper).execute();
                             Token token = response.body();
-                            System.out.println(token);
                             if (token != null) {
                                 SharedPreferences sharedPreferences = context.getSharedPreferences(
                                         getString(R.string.preference_file_key), MODE_PRIVATE);
